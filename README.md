@@ -10,19 +10,19 @@ Copying the description from the above link:
 A CancellationToken enables cooperative cancellation between threads, thread pool work items, or Task objects. An object creates a cancellation token by using a CancellationTokenSource, and then passes the cancellation token to any number of threads or objects that should receive notice of cancellation. The token cannot be used to initiate cancellation. When the owning object calls Cancel on the CancellationTokenSource, the IsCancellationRequested property on every copy of the cancellation token is set to true. The objects that receive the notification can respond in whatever manner is appropriate.
 
 Instantiation:
+```
     //creates an instance of RGCancellationTokenSource and assign it to a property so we have a pointer to it.
     RGCancellationTokenSource *cancelTokenSource = [RGCancellationTokenSource new];
     self.cancelTokenSource = cancelTokenSource;
-
+```
 
 Canceling the task:
 ```
     [self.cancelTokenSource cancel];
-```    
-    
+```
 
-
--(void)doAsynchronousOperation:(RGCancelToken *)cancelToken {
+Reacting to cancellation request
+```
     [self.activityIndicatorView startAnimating];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -51,4 +51,5 @@ Canceling the task:
             }
         }
     });
-}
+```
+
