@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf3-cl-zhc">
+                                <rect key="frame" x="131" y="20" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="dJp-hU-cWg"/>
+                                    <constraint firstAttribute="height" constant="30" id="tUZ-ev-PkU"/>
+                                </constraints>
+                                <state key="normal" title="Do Async Task">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doAsyncTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BVq-iE-TwR"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xCX-GX-MLV">
+                                <rect key="frame" x="197" y="58" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="HFq-Tx-fMU"/>
+                                    <constraint firstAttribute="height" constant="20" id="hqg-6v-SPH"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuA-Le-I74">
+                                <rect key="frame" x="131" y="86" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="Uvz-d5-sZG"/>
+                                    <constraint firstAttribute="height" constant="30" id="q0Z-Yt-2Xb"/>
+                                </constraints>
+                                <state key="normal" title="Cancel Async Task">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelAsyncTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hYc-RH-ev9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UuA-Le-I74" firstAttribute="top" secondItem="xCX-GX-MLV" secondAttribute="bottom" constant="8" id="8vz-jM-1iq"/>
+                            <constraint firstAttribute="centerX" secondItem="kf3-cl-zhc" secondAttribute="centerX" id="Bel-dv-gMc"/>
+                            <constraint firstAttribute="centerX" secondItem="UuA-Le-I74" secondAttribute="centerX" id="V8i-7c-wwg"/>
+                            <constraint firstItem="xCX-GX-MLV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="197" id="hXS-Qh-amt"/>
+                            <constraint firstAttribute="trailing" secondItem="xCX-GX-MLV" secondAttribute="trailing" constant="197" id="jKa-nY-CKi"/>
+                            <constraint firstItem="xCX-GX-MLV" firstAttribute="top" secondItem="kf3-cl-zhc" secondAttribute="bottom" constant="8" id="miZ-Lt-bls"/>
+                            <constraint firstItem="kf3-cl-zhc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="oZP-dt-O5G"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="xCX-GX-MLV" id="ZQo-Dk-eTX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
